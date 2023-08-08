@@ -13,11 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image 16.04
-      run: docker build -t judger-test -f tests/Dockerfile-16.04 .
-    - name: run test
-      run: docker run --rm -v $PWD:/src judger-test /bin/bash -c "chmod +x tests/runtest.sh && ./tests/runtest.sh"
+    # - uses: actions/checkout@v3
+    # - name: Build the Docker image 16.04
+    #   run: docker build -t judger-test -f tests/Dockerfile-16.04 .
+    # - name: run test
+    #   run: docker run --rm -v $PWD:/src judger-test /bin/bash -c "chmod +x tests/runtest.sh && ./tests/runtest.sh"
 
     - name: Build the Docker image 18.04
       run: docker build -t judger-test -f tests/Dockerfile-18.04 .
