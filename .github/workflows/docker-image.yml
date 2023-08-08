@@ -17,6 +17,9 @@ jobs:
     - name: Build the Docker image 16.04
       run: docker build -t judger-test -f tests/Dockerfile-16.04 .
     - name: run test
-      run: docker run -it --rm -v $PWD:/src judger-test /bin/bash -c "chmod +x tests/runtest.sh && ./tests/runtest.sh"
-    - name: uild the Docker image 18.04
-      run: docker run -it --rm -v $PWD:/src judger-test /bin/bash -c "chmod +x tests/runtest.sh && ./tests/runtest.sh"
+      run: docker run --rm -v $PWD:/src judger-test /bin/bash -c "chmod +x tests/runtest.sh && ./tests/runtest.sh"
+
+    - name: Build the Docker image 18.04
+      run: docker build -t judger-test -f tests/Dockerfile-18.04 .
+    - name: run test
+      run: docker run --rm -v $PWD:/src judger-test /bin/bash -c "chmod +x tests/runtest.sh && ./tests/runtest.sh"
